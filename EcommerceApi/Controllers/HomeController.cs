@@ -13,5 +13,19 @@ namespace EcommerceApi.Controllers
         {
             return "Esto es una prueba";
         }
+
+        [HttpPost]
+        [Route("imprimir")]
+        public string ImprimirNombre(string nombre)
+        {
+            return $"Este es el nombre: {nombre}";
+        }
+
+        [HttpDelete]
+        [Route("eliminar/{id}")]
+        public string EliminarEmpleado(int id)
+        {
+            return $"Se elimino correctamente el empleado con id: {id}";
+        }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\UPC\\DEV\\ecommerce\\back\\vstudio\\Ecommerce\\EcommerceApi\\EcommerceApi.csproj": {}
+    "F:\\UPC\\DEV\\profe\\EcommerceApi\\EcommerceApi.csproj": {}
   },
   "projects": {
-    "F:\\UPC\\DEV\\ecommerce\\back\\vstudio\\Ecommerce\\EcommerceApi\\EcommerceApi.csproj": {
+    "F:\\UPC\\DEV\\profe\\EcommerceApi\\EcommerceApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\UPC\\DEV\\ecommerce\\back\\vstudio\\Ecommerce\\EcommerceApi\\EcommerceApi.csproj",
+        "projectUniqueName": "F:\\UPC\\DEV\\profe\\EcommerceApi\\EcommerceApi.csproj",
         "projectName": "EcommerceApi",
-        "projectPath": "F:\\UPC\\DEV\\ecommerce\\back\\vstudio\\Ecommerce\\EcommerceApi\\EcommerceApi.csproj",
+        "projectPath": "F:\\UPC\\DEV\\profe\\EcommerceApi\\EcommerceApi.csproj",
         "packagesPath": "C:\\Users\\Mohar\\.nuget\\packages\\",
-        "outputPath": "F:\\UPC\\DEV\\ecommerce\\back\\vstudio\\Ecommerce\\EcommerceApi\\obj\\",
+        "outputPath": "F:\\UPC\\DEV\\profe\\EcommerceApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohar\\AppData\\Roaming\\NuGet\\NuGet.Config",

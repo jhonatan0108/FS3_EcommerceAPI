@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YDatElv21X9fhMujL3uzmIM9nneJ0nUfUVpspy84+RlFONCgDZmURdct1S/0JMZkZ+MPEaLdo9Wp0DWw5VKWCA==",
+  "dgSpecHash": "6AzVMgy20u65TSMoAn6McdPlvo9F7otCAEFQmp2M7NB9dvA4g5qwircWGuu5fJwfP8AtRWVOzVQjyp3jXOMUFQ==",
   "success": true,
-  "projectFilePath": "F:\\UPC\\DEV\\ecommerce\\back\\vstudio\\Ecommerce\\EcommerceApi\\EcommerceApi.csproj",
+  "projectFilePath": "F:\\UPC\\DEV\\profe\\EcommerceApi\\EcommerceApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohar\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Mohar\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
