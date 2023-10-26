@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositorios\Clientes\" />
     <Folder Include="Repositorios\Ventas\" />
     <Folder Include="ServiciosExternos\WebAPI\Modelos\" />
     <Folder Include="ServiciosExternos\WebAPI\Repositorios\" />
