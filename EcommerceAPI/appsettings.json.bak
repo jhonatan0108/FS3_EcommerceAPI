@@ -1,8 +1,11 @@
 {
+<<<<<<< HEAD
+=======
   "ConnectionStrings": {
     "SQLConnection": "Server=JONAS\\SQLEXPRESS;Database=Ecommerce; Trusted_Connection=True; TrustServerCertificate=True"
   },
 
+>>>>>>> origin/master
   "Logging": {
     "LogLevel": {
       "Default": "Information",

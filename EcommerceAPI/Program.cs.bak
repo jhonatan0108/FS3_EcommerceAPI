@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+namespace EcommerceApi
+=======
 using EcommerceAPI.Configuracion.Container;
 
 namespace EcommerceAPI
+>>>>>>> origin/master
 {
     public class Program
     {

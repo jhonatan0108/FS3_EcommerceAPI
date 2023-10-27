@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Clases\Constantes\Common\" />
+    <Folder Include="Clases\Constantes\Productos\" />
+    <Folder Include="Clases\Enumerables\" />
+    <Folder Include="Clases\Helpers\Archivos\" />
+    <Folder Include="Clases\Helpers\Cifrado\" />
+    <Folder Include="Clases\Helpers\JWT\" />
+  </ItemGroup>
+
+</Project>
