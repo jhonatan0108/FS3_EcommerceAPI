@@ -1,0 +1,25 @@
+PASOS A SEGUIR
+
+Capa Infraestructura
+1. Crear la Entidad (ProductoEntity, CompraEntity, CompraDetalleEntity) 
+     - vamos a la carpeta Entidades y crear la clase con las propiedades de la tabla
+2. Incluir la Entidad dentro del Contexto de la base datos (como DbSet)
+
+3. Repositorio para ProductoEntity - hacer la interfaz y la clase que implementa en la carpeta
+	Repositorios
+
+ - Los metodos de crud (ya se hicieron en el flujo de clientes)
+
+
+4. Crear el contrato de la tabla (ProductoContract, CompraContract) en la capa de comunes carpeta
+	"Contratos" 
+
+Capa Dominio
+
+5. En la carpeta "Services" agregar carpeta con el nombre del flujo "Productos" y luego crear la interfaz
+ para la logica de negocio y tambien la clase que implementa
+
+
+6. Agregar mapper para la entidad y contract
+
+7. Crear el Controlador "ProductoController" agregar los metodos para el crud
