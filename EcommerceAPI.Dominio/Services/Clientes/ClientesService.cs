@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
+using EcommerceAPI.Comunes.Clases.Helpers.Cifrado;
 using EcommerceAPI.Infraestructura.Database.Entidades;
 using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 
@@ -25,6 +26,14 @@ namespace EcommerceAPI.Dominio.Services.Clientes
             }
         }
 
+        public (ClienteContract?, string, byte[]) FindByEmail(string email)
+        {
+            ClienteEntity cliente = _clientesRepository.FindByEmail(email);
+            ClienteContract clienteResult = _mapper.Map<ClienteContract>(cliente);
+            return (clienteResult, cliente.contraseña_encriptada, cliente.salt);
+
+        }
+
         public ClienteContract Get(int id)
         {
             ClienteEntity cliente = _clientesRepository.Get(id);
@@ -41,6 +50,9 @@ namespace EcommerceAPI.Dominio.Services.Clientes
         public ClienteContract Insert(ClienteContract cliente)
         {
             ClienteEntity clienteEntity = _mapper.Map<ClienteEntity>(cliente);
+            (string contraseñaEncriptada, byte[] salt) = Encriptador.EncryptPassword(cliente.contraseña);
+            clienteEntity.contraseña_encriptada = contraseñaEncriptada;
+            clienteEntity.salt = salt;
             clienteEntity = _clientesRepository.Insert(clienteEntity);
 
             return _mapper.Map<ClienteContract>(clienteEntity);
@@ -49,7 +61,7 @@ namespace EcommerceAPI.Dominio.Services.Clientes
         public ClienteContract Update(ClienteContract cliente)
         {
             ClienteEntity clienteEntity = _clientesRepository.Get(cliente.id_cliente);
-            if(clienteEntity != null)
+            if (clienteEntity != null)
             {
                 clienteEntity = _clientesRepository.Update(_mapper.Map<ClienteEntity>(cliente));
             }

@@ -36,5 +36,13 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
         /// </summary>
         /// <param name="entidad">Datos del cliente</param>
         void Delete(ClienteEntity entidad);
+
+
+        /// <summary>
+        /// MEtodo usado para encontrar un usuario basado en su email
+        /// </summary>
+        /// <param name="email">Email ingresado por el usuario</param>
+        /// <returns>Datos del cliente encontrado</returns>
+        ClienteEntity FindByEmail(string email);
     }
 }

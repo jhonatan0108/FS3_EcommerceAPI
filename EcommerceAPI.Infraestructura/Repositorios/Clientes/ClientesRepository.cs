@@ -28,6 +28,15 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
             return _context.Clientes.ToList();
         }
 
+        public ClienteEntity FindByEmail(string email)
+        {
+            return _context.Clientes
+                    .Where(c => c.correo.Equals(email)) // Basic comparison
+                    .AsEnumerable() // Switch to LINQ to Objects
+                    .FirstOrDefault(c => string.Equals(c.correo, email, StringComparison.OrdinalIgnoreCase)); // Case-insensitive comparison
+        }
+    
+
         public ClienteEntity Insert(ClienteEntity entidad)
         {
             _context.Clientes.Add(entidad);
