@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Clases\Constantes\Common\" />
     <Folder Include="Clases\Constantes\Productos\" />
-    <Folder Include="Clases\Contratos\" />
     <Folder Include="Clases\Enumerables\" />
     <Folder Include="Clases\Helpers\Archivos\" />
     <Folder Include="Clases\Helpers\Cifrado\" />
