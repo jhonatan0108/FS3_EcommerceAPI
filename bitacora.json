@@ -1,0 +1,28 @@
+{
+    "Log": [
+        {
+            "tag": "O26T1157",
+            "desc": "Se agregan tres paquetes Nuget para EntityFramework"
+        },
+        {
+            "tag": "O26T1224",
+            "desc": "Estructura de carpetas para la capa infraestructura y configuracion"
+        },
+        {
+            "tag": "O26T1230",
+            "desc": "Se instala AutoMapper para la capa de dominio y configuracion; estructura de carpetas para capa dominio"
+        },
+        {
+            "tag": "O26T1249",
+            "desc": "Se instalan paquetes nuget aspnetcore.cors y autoregisterdi; estructura de carpetas para configuracion; clase register y perfilautomapper"
+        },
+        {
+            "tag": "O26T1307",
+            "desc": "Estructura de carpetas para capa comunes"
+        },
+        {
+            "tag": "O26T1320",
+            "desc": "Se agregan las dependencias entre proyectos y se recompila la solucion. se corrige un archivo"
+        }
+    ]
+}
