@@ -17,7 +17,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-		Description = 0.1.0-0
+		Description = 0.1.3-0: se agrega la cadena de conexion y se inyecta en las opciones de inicio de aplicacion (capa configuracion)
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0FAD301D-93D5-4BA1-ABB6-F95827BE92E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

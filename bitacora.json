@@ -23,6 +23,14 @@
         {
             "tag": "O26T1320",
             "desc": "Se agregan las dependencias entre proyectos y se recompila la solucion. se corrige un archivo"
+        },
+        {
+            "tag": "O27T1725",
+            "desc": "Se agrega el contexto de base de datos y se crea la primera clase de entidad"
+        },
+        {
+            "tag": "O27T1802",
+            "desc": "se agrega la cadena de conexion y se inyecta en las opciones de inicio de aplicacion (capa configuracion)"
         }
     ]
 }
