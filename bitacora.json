@@ -31,6 +31,18 @@
         {
             "tag": "O27T1802",
             "desc": "se agrega la cadena de conexion y se inyecta en las opciones de inicio de aplicacion (capa configuracion)"
+        },
+        {
+            "tag": "O27T2004",
+            "desc": "se agrega configuracion para inyectar automapper y se configuran las politicas de cors (capa configuracion)"
+        },
+        {
+            "tag": "O27T2022",
+            "desc": "se llama al método Register.Configuracion() en la clase Program, para agregar la configuracion personalizada que tenemos en Register"
+        },
+        {
+            "tag": "O27T2045",
+            "desc": "se crea la clase ClienteContract en la capa Comunes y se implementa el mapeo de esta a ClienteEntity en la clase PerfilAutoMapper de la capa configuracion"
         }
     ]
 }
