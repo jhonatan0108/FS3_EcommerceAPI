@@ -43,6 +43,34 @@
         {
             "tag": "O27T2045",
             "desc": "se crea la clase ClienteContract en la capa Comunes y se implementa el mapeo de esta a ClienteEntity en la clase PerfilAutoMapper de la capa configuracion"
+        },
+        {
+            "tag": "O28T2146",
+            "desc": "se implementa la clase e interfaz para el repositorio de clientes (infraestructura)"
+        },
+        {
+            "tag": "O28T2211",
+            "desc": "se crea la clase e interfaz para el servicio Clientes (dominio)"
+        },
+        {
+            "tag": "O28T2249",
+            "desc": "implementacion del controlador para el flujo de clientes"
+        },
+        {
+            "tag": "O28T2254",
+            "desc": "inyeccion del servicio clientes en el controlador del mismo tipo en capa de presentacion"
+        },
+        {
+            "tag": "O28T2303",
+            "desc": "se crea la action getall para el flujo de clientes; se comprueba el error resultado de no haber inyectado las dependencias adecuadas en configuracion"
+        },
+        {
+            "tag": "O28T1127",
+            "desc": "se agrega la inyeccion de dependencias para repository y service del flujo de clientes"
+        },
+        {
+            "tag": "O28T1149",
+            "desc": "se agrega action getbyid al controlador de clientes"
         }
     ]
 }

@@ -17,7 +17,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-		Description = 0.1.4-0: se completan las configuraciones  iniciales (inyecciones de dependencia); clase ClienteContract; se mapea cliente en PerfilAutoMapper;
+		Description = 0.1.6-2
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0FAD301D-93D5-4BA1-ABB6-F95827BE92E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
