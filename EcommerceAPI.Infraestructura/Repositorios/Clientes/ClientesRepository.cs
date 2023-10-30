@@ -30,12 +30,14 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
 
         public ClienteEntity FindByEmail(string email)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return _context.Clientes
                     .Where(c => c.correo.Equals(email)) // Basic comparison
                     .AsEnumerable() // Switch to LINQ to Objects
                     .FirstOrDefault(c => string.Equals(c.correo, email, StringComparison.OrdinalIgnoreCase)); // Case-insensitive comparison
+#pragma warning restore CS8603 // Possible null reference return.
         }
-    
+
 
         public ClienteEntity Insert(ClienteEntity entidad)
         {

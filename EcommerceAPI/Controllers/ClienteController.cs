@@ -16,7 +16,6 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet]
-
         public IActionResult GetAll()
         {
             List<ClienteContract> lista = _clientesService.GetAll();

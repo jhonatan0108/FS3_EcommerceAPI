@@ -50,8 +50,6 @@ namespace EcommerceAPI.Configuracion.Container
                 .Where(c => c.Name.EndsWith("Repository") ||
                        c.Name.EndsWith("Service"))
                 .AsPublicImplementedInterfaces();
-
-
             #endregion
         }
     }
