@@ -60,14 +60,17 @@ namespace EcommerceAPI.Controllers
 
         [HttpPost]
         [Route("InciarSesion")]
-        public IActionResult Login(string password, string email)
+        public IActionResult Login(ClienteContract clienteIngresado)
         {
+            string password = clienteIngresado.contraseña;
+            string email = clienteIngresado.correo;
             (ClienteContract cliente, string contraseña_ecriptada, byte[] salt) = _clientesService.FindByEmail(email);
             if (cliente != null)
             {
                 bool resultado = Encriptador.ComparePasswords(password, contraseña_ecriptada, salt);
                 if (resultado)
                 {
+                    Console.WriteLine("Inicio de session exitoso");
                     return Ok();
                 }
                 else

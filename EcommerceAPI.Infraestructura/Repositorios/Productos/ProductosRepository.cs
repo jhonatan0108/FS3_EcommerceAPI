@@ -26,7 +26,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
 
         public List<ProductoEntity> GetByCategory(int category)
         {
-            return _context.Productos.Where(p => p.id_categoria == category).ToList();
+            return _context.Productos.Where(p => p.id_categoria == category && p.id_estado != 5).ToList();
         }
 
         public ProductoEntity GetById(int id)
@@ -36,7 +36,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
 
         public List<ProductoEntity> GetByPriceRange(float minPrice, float maxPrice)
         {
-            return _context.Productos.Where(p => p.valor <= minPrice && p.valor >= maxPrice).ToList();
+            return _context.Productos.Where(p => p.valor <= minPrice && p.valor >= maxPrice && p.id_estado != 5).ToList();
         }
 
         public ProductoEntity Insert(ProductoEntity entidad)

@@ -43,6 +43,12 @@ namespace EcommerceAPI.Dominio.Services.Productos
             return _mapper.Map<ProductoContract>(producto);
         }
 
+        public List<ProductoContract> GetByPriceRange(float minPrice, float maxPrice)
+        {
+            List<ProductoEntity> productosEnRango = _productsRepository.GetByPriceRange(minPrice, maxPrice);
+            return _mapper.Map<List<ProductoContract>>(productosEnRango);
+        }
+
         public ProductoContract Insert(ProductoContract producto)
         {
             ProductoEntity productoEntity = _mapper.Map<ProductoEntity>(producto);
