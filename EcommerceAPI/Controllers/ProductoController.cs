@@ -51,7 +51,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet]
-        [Route("[Action]/{minPrice}&{maxPrice)")]
+        [Route("[Action]/{minPrice}&{maxPrice}")]
         public IActionResult GetByPriceRange(float minPrice, float maxPrice)
         {
             List<ProductoContract> listaEnRangoDePrecios = _productoService.GetByPriceRange(minPrice, maxPrice);

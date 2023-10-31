@@ -23,6 +23,7 @@ namespace EcommerceAPI.Configuracion.Container
                 options.UseSqlServer(configuration.GetConnectionString("SQLConnection"));
             });
             #endregion
+
             #region [Configuracion de CORS]
             services.AddCors(options =>
             {

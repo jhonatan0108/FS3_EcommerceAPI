@@ -10,7 +10,7 @@ namespace EcommerceAPI.Dominio.Services.Productos
         List<ProductoContract> GetByCategory(int category);
 
         ProductoContract GetById(int id);
-        List<ProductoContract> GetByPriceRange(float minPrice, float maxPrice)
+        List<ProductoContract> GetByPriceRange(float minPrice, float maxPrice);
 
         ProductoContract Insert(ProductoContract producto);
 

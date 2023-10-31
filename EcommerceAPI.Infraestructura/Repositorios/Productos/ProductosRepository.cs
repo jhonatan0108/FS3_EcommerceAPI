@@ -3,7 +3,7 @@ using EcommerceAPI.Infraestructura.Database.Entidades;
 
 namespace EcommerceAPI.Infraestructura.Repositorios.Productos
 {
-    internal class ProductosRepository : IProductosRepository
+    public class ProductosRepository : IProductosRepository
     {
 
         private readonly EcommerceContext _context;

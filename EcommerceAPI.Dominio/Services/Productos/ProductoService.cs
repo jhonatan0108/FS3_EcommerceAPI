@@ -5,7 +5,7 @@ using EcommerceAPI.Infraestructura.Repositorios.Productos;
 
 namespace EcommerceAPI.Dominio.Services.Productos
 {
-    internal class ProductoService : IProductoService
+    public class ProductoService : IProductoService
     {
         private readonly IProductosRepository _productsRepository;
         private readonly IMapper _mapper;
