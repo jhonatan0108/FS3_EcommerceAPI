@@ -1,6 +1,4 @@
-﻿using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
-using EcommerceAPI.Comunes.Clases.Contratos.Productos;
-using EcommerceAPI.Dominio.Services.Clientes;
+﻿using EcommerceAPI.Comunes.Clases.Contratos.Productos;
 using EcommerceAPI.Dominio.Services.Productos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,19 +6,19 @@ namespace EcommerceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class ProductoController : ControllerBase
     {
-        private readonly IClientesService _clientesService;
-        public ClienteController(IClientesService  clientesService)
+        private readonly IProductosService _productosService;
+        public ProductoController(IProductosService productosService)
         {
-            _clientesService = clientesService;
+            _productosService = productosService;
         }
 
         [HttpGet]
         [Route("[Action]")]
         public IActionResult GetAll()
         {
-            List<ClienteContract> lista = _clientesService.GetAll();
+            List<ProductoContract> lista = _productosService.GetAll();
             return Ok(lista);
         }
 
@@ -28,7 +26,7 @@ namespace EcommerceAPI.Controllers
         [Route("[Action]/{id}")]
         public IActionResult GetbyId(int id)
         {
-            ClienteContract cliente = _clientesService.Get(id);
+            ProductoContract cliente = _productosService.Get(id);
             if (cliente != null)
                 return Ok(cliente);
 
@@ -37,17 +35,17 @@ namespace EcommerceAPI.Controllers
 
         [HttpPost]
         [Route("[Action]")]
-        public IActionResult Create(ClienteContract cliente)
+        public IActionResult Create(ProductoContract cliente)
         {
-            ClienteContract _cliente = _clientesService.Insert(cliente);
+            ProductoContract _cliente = _productosService.Insert(cliente);
             return Ok(_cliente);
         }
 
         [HttpPut]
         [Route("[Action]")]
-        public IActionResult Update(ClienteContract cliente)
+        public IActionResult Update(ProductoContract cliente)
         {
-            ClienteContract _cliente = _clientesService.Update(cliente);
+            ProductoContract _cliente = _productosService.Update(cliente);
             return Ok(_cliente);
         }
 
@@ -55,7 +53,7 @@ namespace EcommerceAPI.Controllers
         [Route("[Action]/{id}")]
         public IActionResult Delete(int id)
         {
-            _clientesService.Delete(id);
+            _productosService.Delete(id);
             return Ok();
         }
     }

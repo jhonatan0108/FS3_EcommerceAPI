@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="Services\Comunes\" />
-    <Folder Include="Services\Productos\" />
   </ItemGroup>
 
   <ItemGroup>
