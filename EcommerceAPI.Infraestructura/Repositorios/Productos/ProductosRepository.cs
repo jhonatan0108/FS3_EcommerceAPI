@@ -24,19 +24,14 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
             return _context.Productos.ToList();
         }
 
-        public List<ProductoEntity> GetByCategory(int category)
-        {
-            return _context.Productos.Where(p => p.id_categoria == category && p.id_estado != 5).ToList();
-        }
-
         public ProductoEntity GetById(int id)
         {
             return _context.Productos.Find(id);
         }
 
-        public List<ProductoEntity> GetByPriceRange(float minPrice, float maxPrice)
+        public List<ProductoEntity> GetByPriceRange(decimal minPrice, decimal maxPrice)
         {
-            return _context.Productos.Where(p => p.valor <= minPrice && p.valor >= maxPrice && p.id_estado != 5).ToList();
+            return _context.Productos.Where(p => p.valor >= minPrice && p.valor <= maxPrice && p.id_estado != 5).ToList();
         }
 
         public ProductoEntity Insert(ProductoEntity entidad)

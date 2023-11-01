@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EcommerceAPI.Comunes.Clases.Contratos.Productos;
 using EcommerceAPI.Infraestructura.Database.Entidades;
+using EcommerceAPI.Infraestructura.Repositorios.Categorias;
 using EcommerceAPI.Infraestructura.Repositorios.Productos;
 
 namespace EcommerceAPI.Dominio.Services.Productos
@@ -8,11 +9,13 @@ namespace EcommerceAPI.Dominio.Services.Productos
     public class ProductoService : IProductoService
     {
         private readonly IProductosRepository _productsRepository;
+        private readonly ICategoriasRepository _categoriasRepository;
         private readonly IMapper _mapper;
 
-        public ProductoService(IProductosRepository productsRepository, IMapper mapper)
+        public ProductoService(IProductosRepository productsRepository, ICategoriasRepository categoriasRepository, IMapper mapper)
         {
             _productsRepository = productsRepository;
+            _categoriasRepository = categoriasRepository;
             _mapper = mapper;
         }
 
@@ -28,21 +31,19 @@ namespace EcommerceAPI.Dominio.Services.Productos
         public List<ProductoContract> GetAll()
         {
             List<ProductoEntity> productos = _productsRepository.GetAll();
-            List<ProductoContract> listaProductos = _mapper.Map<List<ProductoContract>>(productos);
-
-            //Se debe llamar al repositorio de Categorias y popular el campo recorriendo la lista
-            // foreach (ProductoContract item in listaProductos)
-            //{
-            //    item.categoria= 
-            // }
-
-            return listaProductos;
+            return _mapper.Map<List<ProductoContract>>(productos); 
         }
 
-        public List<ProductoContract> GetByCategory(int category)
+        public List<ProductoContract> GetByCategory(string category)
         {
-            List<ProductoEntity> productos = _productsRepository.GetByCategory(category);
-            return _mapper.Map<List<ProductoContract>>(productos);
+            List<ProductoEntity> productos = _productsRepository.GetAll();
+            List<ProductoContract> productoContracts = _mapper.Map<List<ProductoContract>>(productos);
+            foreach(ProductoContract p in productoContracts)
+            {
+                p.categoria = _categoriasRepository.Get(p.id_categoria).nombre;
+            }
+
+            return productoContracts.Where(p => p.categoria == category).ToList();
         }
 
         public ProductoContract GetById(int id)
@@ -51,7 +52,7 @@ namespace EcommerceAPI.Dominio.Services.Productos
             return _mapper.Map<ProductoContract>(producto);
         }
 
-        public List<ProductoContract> GetByPriceRange(float minPrice, float maxPrice)
+        public List<ProductoContract> GetByPriceRange(decimal minPrice, decimal maxPrice)
         {
             List<ProductoEntity> productosEnRango = _productsRepository.GetByPriceRange(minPrice, maxPrice);
             return _mapper.Map<List<ProductoContract>>(productosEnRango);

@@ -6,7 +6,7 @@ using EcommerceAPI.Infraestructura.Repositorios.Categorias;
 
 namespace EcommerceAPI.Dominio.Services.Categorias
 {
-    internal class CategoriasService : ICategoriasService
+    public class CategoriasService : ICategoriasService
     {
         private readonly ICategoriasRepository _categoriasRepository;
         private readonly IMapper _mapper;

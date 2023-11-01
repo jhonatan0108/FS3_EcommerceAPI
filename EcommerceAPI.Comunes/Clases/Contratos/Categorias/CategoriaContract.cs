@@ -3,8 +3,8 @@
     public class CategoriaContract
     {
         public int id_categoria { get; set; }
-        public int nombre { get; set; }
-        public int descripcion { get; set; }
-        public int categoria_padre { get; set; }
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public int? categoria_padre { get; set; }
     }
 }

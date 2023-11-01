@@ -31,15 +31,15 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{category}")]
-        public IActionResult GetCategory(int id_category)
+        [Route("[Action]")]
+        public IActionResult GetCategory(string category)
         {
-            List<ProductoContract> productosCategoria = _productoService.GetByCategory(id_category);
+            List<ProductoContract> productosCategoria = _productoService.GetByCategory(category);
             return Ok(productosCategoria);
         }
 
         [HttpGet]
-        [Route("[Action]/{id}")]
+        [Route("[Action]")]
         public IActionResult Get(int id)
         {
             ProductoContract producto = _productoService.GetById(id);
@@ -51,8 +51,8 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet]
-        [Route("[Action]/{minPrice}&{maxPrice}")]
-        public IActionResult GetByPriceRange(float minPrice, float maxPrice)
+        [Route("[Action]")]
+        public IActionResult GetByPriceRange(decimal minPrice, decimal maxPrice)
         {
             List<ProductoContract> listaEnRangoDePrecios = _productoService.GetByPriceRange(minPrice, maxPrice);
             return Ok(listaEnRangoDePrecios);

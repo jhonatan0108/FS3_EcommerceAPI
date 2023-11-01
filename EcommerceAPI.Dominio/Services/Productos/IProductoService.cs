@@ -7,11 +7,11 @@ namespace EcommerceAPI.Dominio.Services.Productos
 
         List<ProductoContract> GetAll();
 
-        List<ProductoContract> GetByCategory(int category);
+        List<ProductoContract> GetByCategory(string category);
 
         ProductoContract GetById(int id);
 
-        List<ProductoContract> GetByPriceRange(float minPrice, float maxPrice);
+        List<ProductoContract> GetByPriceRange(decimal minPrice, decimal maxPrice);
 
         ProductoContract Insert(ProductoContract producto);
 
