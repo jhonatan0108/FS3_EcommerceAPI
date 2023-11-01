@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
+using EcommerceAPI.Comunes.Clases.Contratos.Estados;
 using EcommerceAPI.Comunes.Clases.Contratos.Productos;
 using EcommerceAPI.Infraestructura.Database.Entidades;
 
@@ -11,6 +12,7 @@ namespace EcommerceAPI.Configuracion.Container
         {
             CreateMap<ClienteEntity, ClienteContract>().ReverseMap();
             CreateMap<ProductoEntity,ProductoContract>().ReverseMap();
+            CreateMap<EstadoEntity,EstadoContract>().ReverseMap();
         }
     }
 }
