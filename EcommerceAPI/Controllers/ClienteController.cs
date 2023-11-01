@@ -23,7 +23,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet]
-        [Route("[Action]/{id}")]
+        [Route("[Action]")]
         public IActionResult Get(int id)
         {
             ClienteContract cliente = _clientesService.Get(id);
@@ -70,7 +70,7 @@ namespace EcommerceAPI.Controllers
                 bool resultado = Encriptador.ComparePasswords(password, contraseña_ecriptada, salt);
                 if (resultado)
                 {
-                    Console.WriteLine("Inicio de session exitoso");
+                    Console.WriteLine("Inicio de sesion exitoso");
                     return Ok();
                 }
                 else

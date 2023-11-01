@@ -28,7 +28,15 @@ namespace EcommerceAPI.Dominio.Services.Productos
         public List<ProductoContract> GetAll()
         {
             List<ProductoEntity> productos = _productsRepository.GetAll();
-            return _mapper.Map<List<ProductoContract>>(productos);
+            List<ProductoContract> listaProductos = _mapper.Map<List<ProductoContract>>(productos);
+
+            //Se debe llamar al repositorio de Categorias y popular el campo recorriendo la lista
+            // foreach (ProductoContract item in listaProductos)
+            //{
+            //    item.categoria= 
+            // }
+
+            return listaProductos;
         }
 
         public List<ProductoContract> GetByCategory(int category)
