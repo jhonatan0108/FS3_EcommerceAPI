@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
+using EcommerceAPI.Comunes.Clases.Helpers.Cifrado;
 using EcommerceAPI.Infraestructura.Database.Entidades;
 using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 
@@ -40,6 +41,9 @@ namespace EcommerceAPI.Dominio.Services.Clientes
 
         public ClienteContract Insert(ClienteContract cliente)
         {
+            string encriptPassword = CifradoHelper.Encriptar(cliente.password);
+            cliente.password = encriptPassword;
+
             ClienteEntity clienteEntity = _mapper.Map<ClienteEntity>(cliente);
             clienteEntity = _clientesRepository.Insert(clienteEntity);
 
@@ -49,8 +53,13 @@ namespace EcommerceAPI.Dominio.Services.Clientes
         public ClienteContract Update(ClienteContract cliente)
         {
             ClienteEntity clienteEntity = _clientesRepository.Get(cliente.id_cliente);
-            if(clienteEntity != null)
+            if (clienteEntity != null)
             {
+
+                string passwordnew = CifradoHelper.Encriptar(cliente.password);
+                if (clienteEntity.password != passwordnew)
+                    cliente.password = passwordnew;
+
                 clienteEntity = _clientesRepository.Update(_mapper.Map<ClienteEntity>(cliente));
             }
             return _mapper.Map<ClienteContract>(clienteEntity);
