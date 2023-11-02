@@ -9,10 +9,15 @@ namespace EcommerceAPI.Infraestructura.Database.Contextos
         {
             
         }
-
+         
         #region [DbSets]
         public virtual DbSet<ClienteEntity> Clientes { get; set; }
 
         #endregion
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        }
     }
 }
