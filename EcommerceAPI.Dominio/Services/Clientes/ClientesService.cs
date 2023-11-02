@@ -7,10 +7,10 @@ namespace EcommerceAPI.Dominio.Services.Clientes
 {
     public class ClientesService : IClientesService
     {
-        private readonly IClientesRepository _clientesRepository;
+        private readonly IEstadosRepository _clientesRepository;
         private readonly IMapper _mapper;
 
-        public ClientesService(IClientesRepository clientesRepository, IMapper mapper)
+        public ClientesService(IEstadosRepository clientesRepository, IMapper mapper)
         {
             _clientesRepository = clientesRepository;
             _mapper = mapper;
