@@ -11,7 +11,6 @@
     <Folder Include="Clases\Constantes\Productos\" />
     <Folder Include="Clases\Enumerables\" />
     <Folder Include="Clases\Helpers\Archivos\" />
-    <Folder Include="Clases\Helpers\Cifrado\" />
     <Folder Include="Clases\Helpers\JWT\" />
   </ItemGroup>
 
