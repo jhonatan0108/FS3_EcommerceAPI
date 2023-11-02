@@ -1,5 +1,7 @@
 ﻿using Ecommerce.Comunes.Clases.Contratos.Clientes;
+using Ecommerce.Comunes.Clases.Contratos.Compras;
 using Ecommerce.Dominio.Services.Clientes;
+using Ecommerce.Dominio.Services.Compras;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,20 +9,20 @@ namespace EcommerceApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientesController : ControllerBase
+    public class ComprasController : ControllerBase
     {
-        private readonly IClientesService _clientesService;
+        private readonly IComprasService _comprasService;
 
-        public ClientesController(IClientesService clientesService)
+        public ComprasController(IComprasService comprasService)
         {
-            _clientesService = clientesService;
+            _comprasService = comprasService;
         }
 
         [HttpGet]
         [Route("getall")]
         public IActionResult GetAll()
         {
-            List<ClienteContract> lista = _clientesService.GetAll();
+            List<CompraContract> lista = _comprasService.GetAll();
             return Ok(lista);
         }
 
@@ -28,32 +30,32 @@ namespace EcommerceApi.Controllers
         [Route("getbyid/{id}")]
         public IActionResult GetById(int id)
         {
-            ClienteContract cliente = _clientesService.Get(id);
-            
-            if(cliente != null) return Ok(cliente);
-            
+            CompraContract cliente = _comprasService.Get(id);
+
+            if (cliente != null) return Ok(cliente);
+
             return BadRequest();
         }
 
         [HttpPost]
         [Route("insert")]
-        public IActionResult Insert([FromBody] ClienteContract contract)
+        public IActionResult Insert([FromBody] CompraContract contract)
         {
-            return Ok(_clientesService.Insert(contract));
+            return Ok(_comprasService.Insert(contract));
         }
 
         [HttpPut]
         [Route("update")]
-        public IActionResult Update([FromBody] ClienteContract contract)
+        public IActionResult Update([FromBody] CompraContract contract)
         {
-            return Ok(_clientesService.Update(contract));
+            return Ok(_comprasService.Update(contract));
         }
 
         [HttpDelete]
         [Route("eliminar/{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_clientesService.Delete(id));
+            return Ok(_comprasService.Delete(id));
         }
     }
 }

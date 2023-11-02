@@ -1,21 +1,11 @@
 ﻿using Ecommerce.Infraestructura.Database.Contextos;
 using Ecommerce.Infraestructura.Database.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ecommerce.Infraestructura.Repositorios.Clientes
 {
-    public class ClientesRepository: IClientesRepository
+    public class ClientesRepository: BaseRepository, IClientesRepository
     {
-        private readonly EcommerceContext _context;
-
-        public ClientesRepository(EcommerceContext context)
-        {
-            _context = context;
-        }
+        public ClientesRepository(EcommerceContext context) : base(context) { }
 
         public List<ClienteEntity> GetAll()
         {

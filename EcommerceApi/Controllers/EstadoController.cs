@@ -1,5 +1,7 @@
 ﻿using Ecommerce.Comunes.Clases.Contratos.Clientes;
+using Ecommerce.Comunes.Clases.Contratos.Estados;
 using Ecommerce.Dominio.Services.Clientes;
+using Ecommerce.Dominio.Services.Estados;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,20 +9,20 @@ namespace EcommerceApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientesController : ControllerBase
+    public class EstadoController : ControllerBase
     {
-        private readonly IClientesService _clientesService;
+        private readonly IEstadosService _estadosService;
 
-        public ClientesController(IClientesService clientesService)
+        public EstadoController(IEstadosService clientesService)
         {
-            _clientesService = clientesService;
+            _estadosService = clientesService;
         }
 
         [HttpGet]
         [Route("getall")]
         public IActionResult GetAll()
         {
-            List<ClienteContract> lista = _clientesService.GetAll();
+            List<EstadoContract> lista = _estadosService.GetAll();
             return Ok(lista);
         }
 
@@ -28,32 +30,32 @@ namespace EcommerceApi.Controllers
         [Route("getbyid/{id}")]
         public IActionResult GetById(int id)
         {
-            ClienteContract cliente = _clientesService.Get(id);
-            
-            if(cliente != null) return Ok(cliente);
-            
+            EstadoContract contrato = _estadosService.Get(id);
+
+            if (contrato != null) return Ok(contrato);
+
             return BadRequest();
         }
 
         [HttpPost]
         [Route("insert")]
-        public IActionResult Insert([FromBody] ClienteContract contract)
+        public IActionResult Insert([FromBody] EstadoContract contract)
         {
-            return Ok(_clientesService.Insert(contract));
+            return Ok(_estadosService.Insert(contract));
         }
 
         [HttpPut]
         [Route("update")]
-        public IActionResult Update([FromBody] ClienteContract contract)
+        public IActionResult Update([FromBody] EstadoContract contract)
         {
-            return Ok(_clientesService.Update(contract));
+            return Ok(_estadosService.Update(contract));
         }
 
         [HttpDelete]
         [Route("eliminar/{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_clientesService.Delete(id));
+            return Ok(_estadosService.Delete(id));
         }
     }
 }

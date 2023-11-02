@@ -68,9 +68,29 @@
             "tag": "O28T1127",
             "desc": "se agrega la inyeccion de dependencias para repository y service del flujo de clientes"
         },
-        {
-            "tag": "O28T1149",
-            "desc": "se agrega action getbyid al controlador de clientes"
-        }
+      {
+        "tag": "O28T1149",
+        "desc": "se agrega action getbyid al controlador de clientes"
+      },
+      {
+        "tag": "O31T1332",
+        "desc": "se crean las entidades compra, detallecompra, estato, producto"
+      },
+      {
+        "tag": "O31T1344",
+        "desc": "se crean los contratos para compra, detallecompra, estado y producto"
+      },
+      {
+        "tag": "O31T1349",
+        "desc": "se agrega perfil de mapeo para compra, detallecompra, estado y producto"
+      },
+      {
+        "tag": "O31T1354",
+        "desc": "se agregan dbsets pra compra, detallecompra, estado y producto"
+      },
+      {
+        "tag": "V01T2052",
+        "desc": "se agrega configuracion para jwt"
+      }
     ]
 }

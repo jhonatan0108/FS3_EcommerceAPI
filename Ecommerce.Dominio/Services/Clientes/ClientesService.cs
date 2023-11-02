@@ -47,13 +47,15 @@ namespace Ecommerce.Dominio.Services.Clientes
             return _mapper.Map<ClienteContract>(clienteEntity);
         }
 
-        public void Delete(int id)
+        public ClienteContract Delete(int id)
         {
             ClienteEntity cliente = _clientesRepository.Get(id);
             if (cliente != null)
             {
                 _clientesRepository.Delete(cliente);
             }
+
+            return _mapper.Map<ClienteContract>(cliente);
         }
     }
 }

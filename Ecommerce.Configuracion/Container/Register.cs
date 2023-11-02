@@ -1,7 +1,15 @@
 ﻿using AutoMapper;
 using Ecommerce.Dominio.Services.Clientes;
+using Ecommerce.Dominio.Services.Compras;
+using Ecommerce.Dominio.Services.DetalleCompras;
+using Ecommerce.Dominio.Services.Estados;
+using Ecommerce.Dominio.Services.Productos;
 using Ecommerce.Infraestructura.Database.Contextos;
 using Ecommerce.Infraestructura.Repositorios.Clientes;
+using Ecommerce.Infraestructura.Repositorios.Compras;
+using Ecommerce.Infraestructura.Repositorios.DetalleCompras;
+using Ecommerce.Infraestructura.Repositorios.Estados;
+using Ecommerce.Infraestructura.Repositorios.Productos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,7 +46,17 @@ namespace EcommerceAPI.Configuracion.Container
             #endregion [Configuracion de CORS]
             #region [Inyeccion de Dependencias]
             services.AddScoped<IClientesRepository, ClientesRepository>();
+            services.AddScoped<IComprasRepository, ComprasRepository>();
+            services.AddScoped<IDetalleComprasRepository, DetalleComprasRepository>();
+            services.AddScoped<IEstadosRepository, EstadosRepository>();
+            services.AddScoped<IProductosRepository, ProductosRepository>();
+
             services.AddScoped<IClientesService, ClientesService>();
+            services.AddScoped<IComprasService, ComprasService>();
+            services.AddScoped<IDetalleComprasService, DetalleComprasService>();
+            services.AddScoped<IEstadosService, EstadosService>();
+            services.AddScoped<IProductosService, ProductosService>();
+
             /*
             var assembliesToScan = new[]
              {
