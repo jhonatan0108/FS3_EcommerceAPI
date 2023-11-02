@@ -1,5 +1,7 @@
 ﻿using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
 using EcommerceAPI.Dominio.Services.Clientes;
+using EcommerceAPI.Dominio.Services.Comunes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -7,18 +9,22 @@ namespace EcommerceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly IClientesService _clientesService;
-        public ClienteController(IClientesService clientesService)
+        private readonly IJwtService _jwtService;
+        public ClienteController(IClientesService clientesService, IJwtService jwtService)
         {
             _clientesService = clientesService;
+            _jwtService = jwtService;
         }
 
         [HttpGet]
         [Route("[Action]")]
         public IActionResult GetAll()
         {
+            string token = _jwtService.GenerarToken("123a1sd");
             List<ClienteContract> lista = _clientesService.GetAll();
             return Ok(lista);
         }
