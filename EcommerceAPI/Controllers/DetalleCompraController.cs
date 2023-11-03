@@ -50,7 +50,7 @@ namespace EcommerceAPI.Controllers
             var datos = new
             {
                 Cantidad_de_productos = detalleCompra.cantidad_producto,
-                Valor = detalleCompra.valor_unitario
+                Valor = detalleCompra.totalDetalle
             };
             return Ok(datos);
         }

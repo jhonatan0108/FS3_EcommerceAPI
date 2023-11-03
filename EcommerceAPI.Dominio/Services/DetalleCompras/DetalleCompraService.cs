@@ -40,7 +40,7 @@ namespace EcommerceAPI.Dominio.Services.DetalleCompra
         public DetalleCompraContract Insert(DetalleCompraContract detalleCompra)
         {
             DetalleCompraEntity detalleCompraEntity = _mapper.Map<DetalleCompraEntity>(detalleCompra);
-            detalleCompraEntity.valor_unitario = _productoService.GetById(detalleCompraEntity.id_producto).valor;
+            detalleCompraEntity.totalDetalle = _productoService.GetById(detalleCompraEntity.id_producto).valor * detalleCompraEntity.cantidad_producto;
             _detalleCompraRepository.Insert(detalleCompraEntity);
             return _mapper.Map<DetalleCompraContract>(detalleCompraEntity);
         }
@@ -48,7 +48,7 @@ namespace EcommerceAPI.Dominio.Services.DetalleCompra
         public DetalleCompraContract Update(DetalleCompraContract detalleCompra)
         {
             DetalleCompraEntity detalleCompraEntity = _mapper.Map<DetalleCompraEntity>(detalleCompra);
-            detalleCompraEntity.valor_unitario = _productoService.GetById(detalleCompraEntity.id_producto).valor;
+            detalleCompraEntity.totalDetalle = _productoService.GetById(detalleCompraEntity.id_producto).valor;
             _detalleCompraRepository.Update(detalleCompraEntity);
             return _mapper.Map<DetalleCompraContract>(detalleCompraEntity);
         }
