@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using EcommerceAPI.Comunes.Clases.Contratos.Carritos;
+using EcommerceAPI.Comunes.Clases.Contratos.DetalleCompra;
 using EcommerceAPI.Comunes.Clases.Contratos.Categorias;
 using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
 using EcommerceAPI.Comunes.Clases.Contratos.Productos;
 using EcommerceAPI.Infraestructura.Database.Entidades;
+using EcommerceAPI.Comunes.Clases.Contratos.Estados;
 
 namespace EcommerceAPI.Configuracion.Container
 {
@@ -15,6 +16,7 @@ namespace EcommerceAPI.Configuracion.Container
             CreateMap<ProductoEntity, ProductoContract>().ReverseMap();
             CreateMap<CategoriaEntity, CategoriaContract>().ReverseMap();
             CreateMap<DetalleCompraEntity, DetalleCompraContract>().ReverseMap();
+            CreateMap<EstadoEntity, EstadoContract>().ReverseMap();
         }
     }
 }

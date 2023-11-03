@@ -1,4 +1,4 @@
-﻿using EcommerceAPI.Comunes.Clases.Contratos.Carritos;
+﻿using EcommerceAPI.Comunes.Clases.Contratos.DetalleCompra;
 
 namespace EcommerceAPI.Dominio.Services.DetalleCompra
 {

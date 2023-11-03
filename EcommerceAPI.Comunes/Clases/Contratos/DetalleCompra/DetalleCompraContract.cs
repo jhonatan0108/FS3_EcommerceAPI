@@ -1,4 +1,4 @@
-﻿namespace EcommerceAPI.Comunes.Clases.Contratos.Carritos
+﻿namespace EcommerceAPI.Comunes.Clases.Contratos.DetalleCompra
 {
     public class DetalleCompraContract
     {

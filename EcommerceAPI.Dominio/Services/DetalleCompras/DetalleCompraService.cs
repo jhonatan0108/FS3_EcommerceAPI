@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using EcommerceAPI.Comunes.Clases.Contratos.Carritos;
+using EcommerceAPI.Comunes.Clases.Contratos.DetalleCompra;
 using EcommerceAPI.Dominio.Services.Productos;
 using EcommerceAPI.Infraestructura.Database.Entidades;
 using EcommerceAPI.Infraestructura.Repositorios.DetalleCompra;

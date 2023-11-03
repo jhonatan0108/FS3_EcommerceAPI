@@ -1,4 +1,4 @@
-﻿using EcommerceAPI.Comunes.Clases.Contratos.Carritos;
+﻿using EcommerceAPI.Comunes.Clases.Contratos.DetalleCompra;
 using EcommerceAPI.Dominio.Services.DetalleCompra;
 using Microsoft.AspNetCore.Mvc;
 
