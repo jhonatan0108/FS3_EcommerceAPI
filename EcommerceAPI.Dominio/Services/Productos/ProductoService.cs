@@ -36,13 +36,11 @@ namespace EcommerceAPI.Dominio.Services.Productos
 
         public List<ProductoContract> GetByCategory(string category)
         {
-            List<ProductoEntity> productos = _productsRepository.GetAll();
-            List<ProductoContract> productoContracts = _mapper.Map<List<ProductoContract>>(productos);
+            List<ProductoContract> productoContracts = _mapper.Map<List<ProductoContract>>(_productsRepository.GetAll());
             foreach(ProductoContract p in productoContracts)
             {
                 p.categoria = _categoriasRepository.Get(p.id_categoria).nombre;
             }
-
             return productoContracts.Where(p => p.categoria == category).ToList();
         }
 

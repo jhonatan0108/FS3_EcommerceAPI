@@ -8,9 +8,9 @@ namespace EcommerceAPI.Dominio.Services.Categorias
 
         CategoriaContract Get(int id);
 
-        CategoriaContract Insert(CategoriaContract entity);
+        CategoriaContract Insert(CategoriaContract categoria);
 
-        CategoriaContract Update(CategoriaContract entity);
+        CategoriaContract Update(CategoriaContract categoria);
 
         void Delete(int id);
     }

@@ -32,7 +32,7 @@ namespace EcommerceAPI.Comunes.Clases.Helpers.Cifrado
         /// </summary>
         /// <param name="password">Contraseña a combinar on el salt</param>
         /// <param name="salt">Array de bytes aleatorios</param>
-        /// <returns></returns>
+        /// <returns>La contraseña en bytes mezclada con el salt</returns>
         private static byte[] CombineSaltAndPassword(string password, byte[] salt)
         {
             // Convertir el password a bytes usando codificacion UTF-8.
@@ -92,7 +92,7 @@ namespace EcommerceAPI.Comunes.Clases.Helpers.Cifrado
         /// <param name="inputPassword">Contraseña ingresada por el usuario</param>
         /// <param name="storedPassword">Contraseña encriptada guardada en la base de datos</param>
         /// <param name="storedSalt">Salt de 16 bytes guardado en la base de datos (uncio por cada usuario)</param>
-        /// <returns></returns>
+        /// <returns>Un boolean indicando si la contraseña ingresada coincide con la ingresada</returns>
         public static bool ComparePasswords(string inputPassword, string storedPassword, byte[] storedSalt)
         {
             //Combinar la contraseña ingresada con el salt guardado en la base de datos
