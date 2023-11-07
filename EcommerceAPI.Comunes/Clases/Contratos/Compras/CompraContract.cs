@@ -10,6 +10,6 @@ namespace EcommerceAPI.Comunes.Clases.Contratos.Compras
         public decimal valor_total { get; set; }
         public string direccion_entrega { get; set; }
         public int id_estado { get; set; }
-        public List<DetalleCompraEntity> detalles { get; set; }
+        public List<DetalleCompraEntity> detalles { get; set; } = new List<DetalleCompraEntity>();
     }
 }
