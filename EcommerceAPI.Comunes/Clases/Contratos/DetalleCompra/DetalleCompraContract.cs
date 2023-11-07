@@ -6,5 +6,6 @@
         public int id_producto { get; set; }
         public int cantidad_producto { get; set; }
         public decimal totalDetalle { get; set; }
+        public int id_compra { get; set; }
     }
 }

@@ -5,6 +5,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.DetalleCompra
     public interface IDetalleCompraRepository
     {
         List<DetalleCompraEntity> GetAll();
+        List<DetalleCompraEntity> GetByCompra(int idCompra);
 
         DetalleCompraEntity Get(int id);
 

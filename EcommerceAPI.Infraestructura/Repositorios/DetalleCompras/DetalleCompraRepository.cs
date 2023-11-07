@@ -41,5 +41,10 @@ namespace EcommerceAPI.Infraestructura.Repositorios.DetalleCompra
             _context.SaveChanges();
             return entity;
         }
+
+        List<DetalleCompraEntity> IDetalleCompraRepository.GetByCompra(int idCompra)
+        {
+            return _context.DetalleCompras.Where(d => d.id_compra == idCompra).ToList();
+        }
     }
 }
