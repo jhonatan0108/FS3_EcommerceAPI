@@ -1,5 +1,6 @@
 ﻿using EcommerceAPI.Infraestructura.Database.Entidades;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace EcommerceAPI.Infraestructura.Database.Contextos
 {
@@ -17,11 +18,18 @@ namespace EcommerceAPI.Infraestructura.Database.Contextos
 
         public virtual DbSet<EstadoEntity> Estado { get; set; }
 
+        public virtual DbSet<CompraEntity> Compras { get; set; }
+
+        public virtual DbSet<CompraDetalleEntity> CompraDetalles { get; set; }
+
         #endregion
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
+
+
     }
 
 }

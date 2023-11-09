@@ -1,7 +1,5 @@
 ﻿using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
-using EcommerceAPI.Comunes.Clases.Contratos.Productos;
 using EcommerceAPI.Dominio.Services.Clientes;
-using EcommerceAPI.Dominio.Services.Productos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers

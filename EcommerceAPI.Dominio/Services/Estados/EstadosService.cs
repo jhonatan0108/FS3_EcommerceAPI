@@ -1,9 +1,7 @@
 ﻿
 
 using AutoMapper;
-using EcommerceAPI.Comunes.Clases.Contratos.Clientes;
 using EcommerceAPI.Comunes.Clases.Contratos.Estados;
-using EcommerceAPI.Infraestructura.Database.Contextos;
 using EcommerceAPI.Infraestructura.Database.Entidades;
 using EcommerceAPI.Infraestructura.Repositorios.Estados;
 
