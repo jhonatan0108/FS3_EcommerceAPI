@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Comunes\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EcommerceAPI.Comunes\EcommerceAPI.Comunes.csproj" />
     <ProjectReference Include="..\EcommerceAPI.Infraestructura\EcommerceAPI.Infraestructura.csproj" />
   </ItemGroup>
